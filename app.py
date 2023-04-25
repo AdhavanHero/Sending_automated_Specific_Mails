@@ -1,13 +1,20 @@
 from flask import Flask, request,redirect
 from flask_mail import Mail, Message
 
-app = Flask(__name__)
+from decouple import Env
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+env = Env()
+env.read_env()
+
+app = Flask(__name__)
+email = env('EMAIL')
+api_key = env('API_KEY')
+
+app.config['MAIL_SERVER'] = email
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] ='Superhero8871@gmail.com'
-app.config['MAIL_PASSWORD'] ='Enter Your API Key'
-app.config['MAIL_DEFAULT_SENDER'] ='Eneter Senders Mail Id'
+app.config['MAIL_USERNAME'] = email
+app.config['MAIL_PASSWORD'] = api_key
+app.config['MAIL_DEFAULT_SENDER'] =email
 app.config['MAIL_USE_TLS']=False  #SSL stands for Secure Sockets Layer, and is a protocol that protects communication over the internet
 app.config['MAIL_USE_SSL']=True
 mail = Mail(app)
