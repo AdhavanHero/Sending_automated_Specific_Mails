@@ -1,14 +1,14 @@
 from flask import Flask, request,redirect
 from flask_mail import Mail, Message
 
-from decouple import Env
+#from decouple import Env
 
-env = Env()
-env.read_env()
+#env = Env()
+#env.read_env()
 
 app = Flask(__name__)
-email = env('EMAIL')
-api_key = env('API_KEY')
+email = os.environ.get('EMAIL')
+api_key = os.environ.get('API_KEY')
 
 app.config['MAIL_SERVER'] = email
 app.config['MAIL_PORT'] = 465
