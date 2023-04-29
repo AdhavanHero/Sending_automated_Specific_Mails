@@ -1,4 +1,4 @@
-name: Webapp
+name: app.py
 
 on:
   schedule:
