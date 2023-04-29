@@ -2,8 +2,7 @@ name: run app.py
 
 on:
   schedule:
-    - cron: '* 1 * * *' # At 00:00 on Monday
-
+    - cron: '1 * * * *' 
 jobs:
   build:
     runs-on: ubuntu-latest
