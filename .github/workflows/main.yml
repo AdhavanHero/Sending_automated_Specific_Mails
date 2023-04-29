@@ -1,4 +1,4 @@
-name: app.py
+name: run app.py
 
 on:
   schedule:
