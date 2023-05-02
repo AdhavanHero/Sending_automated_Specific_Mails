@@ -26,7 +26,7 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           EMAIL: ${{ secrets.EMAIL }}
           
-        run: python app.py
+        run: Python_Script.py
 
       - name: commit files
         run: |
