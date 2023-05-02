@@ -2,7 +2,7 @@ name: Python_Script.py
 
 on:
   schedule:
-    - cron: '0 * * * *' 
+    -  cron: '* * * * *' 
 jobs:
   build:
     runs-on: ubuntu-latest
